@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Google Cloud Functions samples for Node.js 8",
   "scripts": {
-    "test": "mocha test/*.test.js --timeout=20000"
+    "test": "mocha test/*.test.js --timeout=20000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=8"
@@ -27,6 +29,8 @@
   "dependencies": {
     "@google-cloud/firestore": "^1.0.0",
     "escape-html": "^1.0.3",
-    "node-fetch": "^2.3.0"
-  }
+    "node-fetch": "^2.3.0",
+    "snyk": "^1.230.5"
+  },
+  "snyk": true
 }
