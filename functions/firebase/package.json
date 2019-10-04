@@ -12,7 +12,9 @@
     "node": ">=8"
   },
   "scripts": {
-    "test": "ava -T 30s test/*.test.js"
+    "test": "ava -T 30s test/*.test.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -23,6 +25,8 @@
     "uuid": "^3.1.0"
   },
   "dependencies": {
-    "@google-cloud/firestore": "^1.0.0"
-  }
+    "@google-cloud/firestore": "^1.0.0",
+    "snyk": "^1.230.5"
+  },
+  "snyk": true
 }
