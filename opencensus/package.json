@@ -14,11 +14,14 @@
   },
   "scripts": {
     "start": "node metrics-quickstart.js",
-    "test": "repo-tools test run --cmd mocha -- system-test/*.test.js --timeout=5000"
+    "test": "repo-tools test run --cmd mocha -- system-test/*.test.js --timeout=5000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@opencensus/core": "^0.0.12",
-    "@opencensus/exporter-stackdriver": "^0.0.12"
+    "@opencensus/exporter-stackdriver": "^0.0.12",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -27,5 +30,6 @@
   "cloud-repo-tools": {
     "requiresKeyFile": true,
     "requiresProjectId": true
-  }
+  },
+  "snyk": true
 }
