@@ -1,0 +1,30 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - '@google-cloud/spanner > @google-cloud/common-grpc > @google-cloud/common > google-auth-library > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-auth-library > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-auth-library > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-auth-library > gcp-metadata > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-auth-library > gtoken > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-gax > google-auth-library > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-gax > google-auth-library > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-gax > google-auth-library > gtoken > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > @google-cloud/common-grpc > @google-cloud/common > google-auth-library > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > google-gax > google-auth-library > gcp-metadata > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > @google-cloud/common-grpc > @google-cloud/common > google-auth-library > gtoken > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
+    - '@google-cloud/spanner > @google-cloud/common-grpc > @google-cloud/common > google-auth-library > gcp-metadata > gaxios > https-proxy-agent':
+        patched: '2019-10-04T04:56:17.294Z'
