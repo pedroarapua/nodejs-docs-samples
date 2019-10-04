@@ -14,13 +14,16 @@
   },
   "scripts": {
     "test": "repo-tools test install --cmd=npm -- run unit-test",
-    "unit-test": "mocha *.test.js --timeout=600000"
+    "unit-test": "mocha *.test.js --timeout=600000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "googleapis": "^40.0.0",
     "jsonwebtoken": "^8.3.0",
     "mqtt": "^2.18.8",
-    "yargs": "^13.2.2"
+    "yargs": "^13.2.2",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -31,5 +34,6 @@
   "cloud-repo-tools": {
     "requiresKeyFile": true,
     "requiresProjectId": true
-  }
+  },
+  "snyk": true
 }
