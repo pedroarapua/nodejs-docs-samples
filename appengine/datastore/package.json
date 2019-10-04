@@ -15,11 +15,14 @@
   "scripts": {
     "start": "node app.js",
     "system-test": "repo-tools test app",
-    "test": "npm run system-test"
+    "test": "npm run system-test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@google-cloud/datastore": "^3.0.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0"
@@ -32,5 +35,6 @@
     },
     "requiresKeyFile": true,
     "requiresProjectId": true
-  }
+  },
+  "snyk": true
 }
