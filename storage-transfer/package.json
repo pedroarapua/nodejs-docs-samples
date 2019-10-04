@@ -14,12 +14,15 @@
   "scripts": {
     "unit-test": "mocha test/*.test.js --timeout=10000",
     "system-test": "mocha system-test/*.test.js --timeout=10000",
-    "test": "repo-tools test install --cmd=npm -- run unit-test && repo-tools test install --cmd=npm -- run system-test"
+    "test": "repo-tools test install --cmd=npm -- run unit-test && repo-tools test install --cmd=npm -- run system-test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "googleapis": "^40.0.0",
     "moment": "^2.24.0",
-    "yargs": "^13.2.2"
+    "yargs": "^13.2.2",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -42,5 +45,6 @@
         "usage": "node transfer.js --help"
       }
     ]
-  }
+  },
+  "snyk": true
 }
