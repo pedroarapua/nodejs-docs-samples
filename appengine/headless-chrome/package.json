@@ -9,7 +9,9 @@
     "start": "node app.js",
     "system-test": "repo-tools test app",
     "unit-test": "mocha test/*.test.js --timeout=30000",
-    "test": "npm run unit-test && npm run system-test"
+    "test": "npm run unit-test && npm run system-test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.16.3",
-    "puppeteer": "^1.2.0"
+    "puppeteer": "^1.2.0",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -35,5 +38,6 @@
     },
     "requiresKeyFile": true,
     "requiresProjectId": true
-  }
+  },
+  "snyk": true
 }
