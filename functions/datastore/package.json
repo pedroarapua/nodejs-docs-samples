@@ -14,11 +14,14 @@
   "scripts": {
     "e2e-test": "export FUNCTIONS_CMD='gcloud functions' && sh test/updateFunctions.sh && BASE_URL=\"https://$GCF_REGION-$GCLOUD_PROJECT.cloudfunctions.net/\" mocha test/*.test.js --timeout=60000",
     "system-test": "export FUNCTIONS_CMD='functions' && sh test/updateFunctions.sh && BASE_URL=\"http://localhost:8010/$GCLOUD_PROJECT/$GCF_REGION\" && mocha test/*.test.js --timeout=60000",
-    "test": "npm run system-test"
+    "test": "npm run system-test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@google-cloud/datastore": "^3.1.2",
-    "supertest": "^4.0.0"
+    "supertest": "^4.0.0",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/functions-emulator": "^1.0.0-beta.4",
@@ -36,5 +39,6 @@
       "GCF_REGION",
       "FUNCTIONS_CMD"
     ]
-  }
+  },
+  "snyk": true
 }
