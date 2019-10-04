@@ -13,16 +13,20 @@
   },
   "scripts": {
     "test": "repo-tools test install --cmd=npm -- run system-test",
-    "system-test": "mocha system-test/*.test.js --timeout=40000"
+    "system-test": "mocha system-test/*.test.js --timeout=40000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "googleapis": "^40.0.0",
     "safe-buffer": "^5.1.2",
     "uuid": "^3.3.2",
-    "yargs": "^13.2.2"
+    "yargs": "^13.2.2",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
     "mocha": "^5.2.0"
-  }
+  },
+  "snyk": true
 }
