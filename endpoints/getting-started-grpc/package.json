@@ -14,13 +14,16 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "repo-tools test run --cmd mocha -- system-test/*.test.js --timeout=60000"
+    "test": "repo-tools test run --cmd mocha -- system-test/*.test.js --timeout=60000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "google-auth-library": "^4.0.0",
     "grpc": "^1.18.0",
     "jsonwebtoken": "^8.2.0",
-    "yargs": "^13.2.2"
+    "yargs": "^13.2.2",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -47,5 +50,6 @@
         ]
       }
     }
-  }
+  },
+  "snyk": true
 }
