@@ -9,7 +9,9 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "test": "mocha system-test/*.test.js --timeout=60000"
+    "test": "mocha system-test/*.test.js --timeout=60000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -21,7 +23,8 @@
     "yargs": "^13.0.0",
     "gtoken": "^3.0.0",
     "request": "^2.87.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "snyk": "^1.230.5"
   },
   "cloud-repo-tools": {
     "requiresKeyFile": true,
@@ -34,5 +37,6 @@
         ]
       }
     }
-  }
+  },
+  "snyk": true
 }
