@@ -14,12 +14,15 @@
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "test": "repo-tools test app & mocha */*.test.js --timeout=30000 --exit",
-    "e2e-test": "samples test deploy"
+    "e2e-test": "samples test deploy",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "express": "^4.15.4",
     "pug": "^2.0.3",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0",
@@ -38,5 +41,6 @@
     },
     "requiresKeyFile": true,
     "requiresProjectId": true
-  }
+  },
+  "snyk": true
 }
