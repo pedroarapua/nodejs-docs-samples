@@ -12,17 +12,20 @@
     "node": ">=8"
   },
   "scripts": {
-    "test": "mocha test/*.test.js --timeout=20000"
+    "test": "mocha test/*.test.js --timeout=20000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@google-cloud/pubsub": "^0.28.1",
     "@google-cloud/storage": "^2.3.3",
     "@google-cloud/translate": "^3.0.0",
     "@google-cloud/vision": "^0.25.0",
-    "safe-buffer": "^5.1.2"
+    "safe-buffer": "^5.1.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
-     "@google-cloud/nodejs-repo-tools": "^3.3.0",
+    "@google-cloud/nodejs-repo-tools": "^3.3.0",
     "mocha": "^6.0.0",
     "proxyquire": "^2.1.0",
     "sinon": "^7.2.7"
@@ -30,5 +33,6 @@
   "cloud-repo-tools": {
     "requiresKeyFile": true,
     "requiresProjectId": true
-  }
+  },
+  "snyk": true
 }
