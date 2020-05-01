@@ -10,7 +10,9 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "repo-tools test app --url localhost:8080/static/main.css"
+    "test": "repo-tools test app --url localhost:8080/static/main.css",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "cloud-repo-tools": {
     "test": {
@@ -22,9 +24,11 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.3.0"
-  }
+  },
+  "snyk": true
 }
